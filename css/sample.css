@@ -1,0 +1,80 @@
+html{
+    background-image: url(../img/black_board4.jpg);
+    background-size: cover;
+}
+body{
+    margin:0;
+    padding:0;
+    text-align:left;
+    font-size: 32px;
+
+}
+header{
+    color: snow;
+    text-align: center;
+}
+main{
+    color: snow;
+}
+
+.message{
+    text-align: center;
+    margin-top: 60px;
+}
+
+footer{
+    color: snow;
+    text-align: center;
+}
+
+p{
+    margin-top: 60px;
+    font-size:200%;
+    text-align: center;
+    height:100px;
+}
+
+.person_message_box h6{
+    display: flex;
+    justify-content: center;
+}
+
+.person_message_text{
+    font-size: 8px;
+    display: flex;
+    justify-content: center;
+}
+
+.person_message_btn{
+    display: flex;
+    justify-content: center;
+}
+
+.btn_item{
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+.btn_item h4{
+    display: flex;
+    justify-content: center;
+    line-height: 0px;
+}
+
+.meat_item input{
+    height: 120px;
+    width: 100px;
+}
+
+.fish_item input{
+    height: 120px;
+    width: 100px;
+    margin: 0 300px 0 300px;
+}
+
+.eat_out_item input{
+height: 120px;
+width: 100px;
+}
+
+

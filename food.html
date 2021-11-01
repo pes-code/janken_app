@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/sample.css">
+    <title>昼下がりの戯れ</title>
+</head>
+
+<body>
+    <header>
+        <h1>What is good for today's menu?</h1>
+    </header>
+
+    <main>
+        <div class="btn_item">
+            <div class="meat_box" id="meat_btn">
+                <div class="meat_item">
+                    <input type="image" src="img/meat_1.png" name="meta" alt="肉のイラスト">
+                </div>
+                <h4>meat</h4>
+            </div>
+            <div class="fish_box" id="fish_btn">
+                <div class="fish_item">
+                    <input type="image" src="img/fish_1.jpg" name="fish" alt="魚のイラスト">
+                </div>
+                <h4>fish</h4>
+            </div>
+            <div class="eat_out_box" id="eat_out_btn">
+                <div class="eat_out_item">
+                    <input type="image" src="img/spoon_knifr_1.jpg" name="eat_out" alt="食器のイラスト">
+                </div>
+                <h4>eat out</h4>
+            </div>
+        </div>
+        <!--<div id="cooking">let's cooking♪♪</div>-->
+        <div class="message" id="menu">
+            <h3>Message・・・</h3>
+            <!---↓入力したテキストが出力される-->
+            <div id="mydata_out"></div>
+        </div>
+
+        <p id="mode_change">
+            <input type="button" value="shimobeモード" onclick="myfunc_a()">
+            <input type="button" value="oresamaモード" onclick="myfunc_b()">
+            <input type="button" value="neutralモード" onclick="myfunc_c()">
+            <input type="button" value="personモード" onclick="myfunc_d()">
+            <input type="button" value="snsモード" onclick="myfunc_e()">
+        </p>
+        <!----------------------------------------->
+        <div class="person_message_box">
+            <h6>旦那さん（彼氏）は［ココ］をクリック！！</h6>
+            <div class="person_message_item">
+                <div class="person_message_text">
+                    <p>⇓⇓奥さん（彼女）に感謝のコトバを入力して［input］をクリック！⇓⇓</p>
+                </div>
+                <div class="person_message_btn">
+                    <input name="mydata_in" id="mydata_in" type="text" value="" />
+                    <input type="button" value="input" onclick="save();" />
+                </div>
+                <input type="button" value="output" onclick="load();" />
+            </div>
+        </div>
+
+
+        <!----------------------------------------->
+    </main>
+
+    <footer>present by SHIROOBI de la Riva</footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        // 下僕モード
+        const myfunc_a = function () {
+            const myp = document.getElementById("mode_change");
+            $("#meat_btn").on("click", function () {
+                const min = 0
+                const max = 2
+                const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
+                if (randomnumber === 0) {
+                    //$('#cooking').text("焼く");
+                    $("#menu").text("『手料理を、、、！？私のような甲斐性なしにですか？』");
+                    setTimeout(function () {
+                        window.location.href = 'https://cookpad.com/search/%E7%84%BC%E3%81%8F%E3%80%80%E8%82%89%E3%80%80?order=';
+                    }, 5000);
+                    //指定したサイトへジャンプする
+                }
+                else if (randomnumber === 1) {
+                    //$('#cooking').text("煮る");
+                    $("#menu").text("『煮るなり焼くなり好きにしてくだいさい。』");
+                    setTimeout(function () {
+                        window.location.href = 'https://cookpad.com/search/%E8%B1%9A%E8%82%89%20%E7%85%AE%E3%82%8B';
+                    }, 5000);
+                }
+                else if (randomnumber === 2) {
+                    //$('#cooking').text("蒸す");
+                    $("#menu").text("『今日も一日、私のようなお荷物を抱えてお疲れ様でした。』");
+                    setTimeout(function () {
+                        window.location.href = 'https://cookpad.com/search/%E8%92%B8%E3%81%99%E3%80%80%E8%82%89%E3%80%80?order=';
+                    }, 5000);
+                }
+            });
+
+            $("#fish_btn").on("click", function () {
+                const min = 0
+                const max = 2
+                const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
+                if (randomnumber === 0) {
+                    //$('#cooking').text("焼く");
+                    $("#menu").text("『子供達よ、まず手を洗え！せっかくの手料理が汚れるだろ。』");
+                    setTimeout(function () {
+                        window.location.href = 'https://cookpad.com/search/%E7%84%BC%E3%81%8F%E3%80%80%E9%AD%9A%E3%80%80?order=';
+                    }, 5000);
+                }
+                else if (randomnumber === 1) {
+                    //$('#cooking').text("煮る");
+                    $("#menu").text("『ありがとうごぜーます。ありがとうごぜーます。ありがとうごぜーます。』");
+                    setTimeout(function () {
+                        window.location.href = 'https://cookpad.com/search/%E7%85%AE%E3%82%8B%E3%80%80%E9%AD%9A%E3%80%80?order=';
+                    }, 5000);
+                }
+                else if (randomnumber === 2) {
+                    //$('#cooking').text("蒸す");
+                    $("#menu").text("『冠たる幸福、、、私もしかして明日死ぬ？』");
+                    setTimeout(function () {
+                        window.location.href = 'https://cookpad.com/search/%E8%92%B8%E3%81%99%E3%80%80%E9%AD%9A%E3%80%80?order=';
+                    }, 5000);
+                }
+            });
+
+            $("#eat_out_btn").on("click", function () {
+                const min = 0
+                const max = 2
+                const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
+                if (randomnumber === 0) {
+                    //$('#cooking').text("和食");
+                    $("#menu").text("『申し訳ありません。もう少しであなた様のお手を煩わすところでした。』");
+                    setTimeout(function () {
+                        window.location.href = 'https://tabelog.com/yamaguchi/C35202/rstLst/lunch/washoku/';
+                    }, 5000);
+                }
+                else if (randomnumber === 1) {
+                    //$('#cooking').text("洋食");
+                    $("#menu").text("『おもてにお車をまわしております。』");
+                    setTimeout(function () {
+                        window.location.href = 'https://tabelog.com/yamaguchi/C35202/rstLst/yoshoku/';
+                    }, 5000);
+                }
+                else if (randomnumber === 2) {
+                    //$('#cooking').text("中華");
+                    $("#menu").text("『迷われることはありません。私の給料など湯水のようにお使い下さい。』");
+                    setTimeout(function () {
+                        window.location.href = 'https://tabelog.com/chinese/yamaguchi/A3504/rank/';
+                    }, 5000);
+                }
+            });
+        }
+
+
+        //俺様モード
+        const myfunc_b = function () {
+            const myp = document.getElementById("mode_change");
+
+            $("#meat_btn").on("click", function () {
+                const min = 0
+                const max = 2
+                const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
+                if (randomnumber === 0) {
+                    //$('#cooking').text("焼く");
+                    $("#menu").text("『だからソレはやめろって言ってるだろ！？おかわりし過ぎちゃうだろ！！』");
+                    setTimeout(function () {
+                        window.location.href = 'https://cookpad.com/recipe/6939830';
+                    }, 5000);
+                    //指定したサイトへジャンプする
+                }
+                else if (randomnumber === 1) {
+                    //$('#cooking').text("煮る");
+                    $("#menu").text("『なんだ、石原さとみかと思えばお前じゃん。』");
+                    setTimeout(function () {
+                        window.location.href = 'https://cookpad.com/recipe/6988034';
+                    }, 5000);
+                }
+                else if (randomnumber === 2) {
+                    //$('#cooking').text("蒸す");
+                    $("#menu").text("『おかわり。。。頼んでるんじゃなくて命令な。』");
+                    setTimeout(function () {
+                        window.location.href = 'https://cookpad.com/recipe/6983974';
+                    }, 5000);
+                }
+            });
+
+            $("#fish_btn").on("click", function () {
+                const min = 0
+                const max = 2
+                const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
+                if (randomnumber === 0) {
+                    //$('#cooking').text("焼く");
+                    $("#menu").text("『まったく、お前の功績は銅像が建つレベルだな。』");
+                    setTimeout(function () {
+                        window.location.href = 'https://cookpad.com/recipe/6993002';
+                    }, 5000);
+                }
+                else if (randomnumber === 1) {
+                    //$('#cooking').text("煮る");
+                    $("#menu").text("『やばっ、、さとみが霞んで見える。』");
+                    setTimeout(function () {
+                        window.location.href = 'https://cookpad.com/recipe/6992120';
+                    }, 5000);
+                }
+                else if (randomnumber === 2) {
+                    //$('#cooking').text("蒸す");
+                    $("#menu").text("『お前の手料理って飲食業界を脅かすよな。』");
+                    setTimeout(function () {
+                        window.location.href = 'https://cookpad.com/recipe/6979275';
+                    }, 5000);
+                }
+            });
+
+            $("#eat_out_btn").on("click", function () {
+                const min = 0
+                const max = 2
+                const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
+                if (randomnumber === 0) {
+                    //$('#cooking').text("和食");
+                    $("#menu").text("『お前の手料理に比べればどれも愚食だな、、、。』");
+                    setTimeout(function () {
+                        window.location.href = 'https://tabelog.com/yamaguchi/A3504/A350401/35010169/';
+                    }, 5000);
+                }
+                else if (randomnumber === 1) {
+                    //$('#cooking').text("洋食");
+                    $("#menu").text("『え？今日お前の手料理じゃないの？世紀末だな、、、』");
+                    setTimeout(function () {
+                        window.location.href = 'https://tabelog.com/yamaguchi/A3504/A350401/35002015/';
+                    }, 5000);
+                }
+                else if (randomnumber === 2) {
+                    //$('#cooking').text("中華");
+                    $("#menu").text("『金の糸目をつける必要などない。俺が稼いでくるまでのこと。』");
+                    setTimeout(function () {
+                        window.location.href = 'https://tabelog.com/yamaguchi/A3504/A350401/35007756/';
+                    }, 5000);
+                }
+            });
+        }
+
+
+        //ニュートラルモード
+        const myfunc_c = function () {
+            const myp = document.getElementById("mode_change");
+            $("#meat_btn").on("click", function () {
+                const min = 0
+                const max = 2
+                const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
+                if (randomnumber === 0) {
+                    //$('#cooking').text("焼く");
+                    $("#menu").text("『こんな良い嫁もらえるなんて、俺、前世で徳積み過ぎた？』");
+                    setTimeout(function () {
+                        window.location.href = 'https://cookpad.com/search/%E7%84%BC%E3%81%8F%E3%80%80%E8%82%89%E3%80%80?order=';
+                    }, 5000);
+                    //指定したサイトへジャンプする
+                }
+                else if (randomnumber === 1) {
+                    //$('#cooking').text("煮る");
+                    $("#menu").text("『今日も一緒にご飯が食べられて嬉しいな。』");
+                    setTimeout(function () {
+                        window.location.href = 'https://cookpad.com/search/%E8%B1%9A%E8%82%89%20%E7%85%AE%E3%82%8B';
+                    }, 5000);
+                }
+                else if (randomnumber === 2) {
+                    //$('#cooking').text("蒸す");
+                    $("#menu").text("『うわっ、、こんな旨いもの食べたらこの世から戦争がなくなる。』");
+                    setTimeout(function () {
+                        window.location.href = 'https://cookpad.com/search/%E8%92%B8%E3%81%99%E3%80%80%E8%82%89%E3%80%80?order=';
+                    }, 5000);
+                }
+            });
+
+            $("#fish_btn").on("click", function () {
+                const min = 0
+                const max = 2
+                const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
+                if (randomnumber === 0) {
+                    //$('#cooking').text("焼く");
+                    $("#menu").text("『え、、もう掃除･洗濯終わったの？それって世界救ったに等しいじゃん。』");
+                    setTimeout(function () {
+                        window.location.href = 'https://cookpad.com/search/%E7%84%BC%E3%81%8F%E3%80%80%E9%AD%9A%E3%80%80?order=';
+                    }, 5000);
+                }
+                else if (randomnumber === 1) {
+                    //$('#cooking').text("煮る");
+                    $("#menu").text("『毎日こんなおいしいモノ出されちゃ、白旗何本あっても足りないわ。』");
+                    setTimeout(function () {
+                        window.location.href = 'https://cookpad.com/search/%E7%85%AE%E3%82%8B%E3%80%80%E9%AD%9A%E3%80%80?order=';
+                    }, 5000);
+                }
+                else if (randomnumber === 2) {
+                    //$('#cooking').text("蒸す");
+                    $("#menu").text("『あれ？なんかまた可愛くなってるよね？』");
+                    setTimeout(function () {
+                        window.location.href = 'https://cookpad.com/search/%E8%92%B8%E3%81%99%E3%80%80%E9%AD%9A%E3%80%80?order=';
+                    }, 5000);
+                }
+            });
+
+            $("#eat_out_btn").on("click", function () {
+                const min = 0
+                const max = 2
+                const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
+                if (randomnumber === 0) {
+                    //$('#cooking').text("和食");
+                    $("#menu").text("『たまには休憩しなよ。いつもありがとう。』");
+                    setTimeout(function () {
+                        window.location.href = 'https://tabelog.com/yamaguchi/C35202/rstLst/lunch/washoku/';
+                    }, 5000);
+                }
+                else if (randomnumber === 1) {
+                    //$('#cooking').text("洋食");
+                    $("#menu").text("『掃除に洗濯？俺がやっとくよ。』");
+                    setTimeout(function () {
+                        window.location.href = 'https://tabelog.com/yamaguchi/C35202/rstLst/yoshoku/';
+                    }, 5000);
+                }
+                else if (randomnumber === 2) {
+                    //$('#cooking').text("中華");
+                    $("#menu").text("『良いから子供は早く寝なさい。今すぐだ！！』");
+                    setTimeout(function () {
+                        window.location.href = 'https://tabelog.com/chinese/yamaguchi/A3504/rank/';
+                    }, 5000);
+                }
+            });
+        }
+
+        //////////////////////夫婦モード
+        //    localStorage.setItem('key', 'value')
+        //    const value = localStorage.getItem('key')
+        //    console.log(value)
+        //////////////////////////////////////////////////////////////////
+        // input
+        function save() {
+            var mydata = document.getElementById("mydata_in").value;
+            console.log(`mydata_in = ${mydata_in}`);
+            localStorage.setItem('mydata', mydata);
+        }
+        // output
+        function load() {
+            var mydata = "";
+            if (!localStorage.getItem('mydata')) {
+                mydata = "データがありません";
+            } else {
+                mydata = localStorage.getItem('mydata');
+            }
+            console.log(`mydata= ${mydata}`);
+            document.getElementById("mydata_out").innerHTML = mydata;
+        }
+
+
+        ////////////////////////////////////////////////
+        const myfunc_d = function () {
+            const myp = document.getElementById("mode_change");
+            $("#meat_btn").on("click", function () {
+
+            });
+
+            $("#fish_btn").on("click", function () {
+            });
+
+            $("#eat_out_btn").on("click", function () {
+            });
+        }
+        ///////////////////////////////////////////////////////////////////////////
+
+
+        //初期設定
+        $("#meat_btn").on("click", function () {
+            const min = 0
+            const max = 2
+            const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
+            if (randomnumber === 0) {
+                //$('#cooking').text("焼く");
+                $("#menu").text("『こんな良い嫁もらえるなんて、俺、前世で徳積み過ぎた？』");
+                setTimeout(function () {
+                    window.location.href = 'https://cookpad.com/search/%E7%84%BC%E3%81%8F%E3%80%80%E8%82%89%E3%80%80?order=';
+                }, 5000);
+                //指定したサイトへジャンプする
+            }
+            else if (randomnumber === 1) {
+                //$('#cooking').text("煮る");
+                $("#menu").text("『今日も一緒にご飯が食べられて嬉しいな。』");
+                setTimeout(function () {
+                    window.location.href = 'https://cookpad.com/search/%E8%B1%9A%E8%82%89%20%E7%85%AE%E3%82%8B';
+                }, 5000);
+            }
+            else if (randomnumber === 2) {
+                //$('#cooking').text("蒸す");
+                $("#menu").text("『うわっ、、こんな旨いもの食べたらこの世から戦争がなくなる。』");
+                setTimeout(function () {
+                    window.location.href = 'https://cookpad.com/search/%E8%92%B8%E3%81%99%E3%80%80%E8%82%89%E3%80%80?order=';
+                }, 5000);
+            }
+        });
+
+        $("#fish_btn").on("click", function () {
+            const min = 0
+            const max = 2
+            const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
+            if (randomnumber === 0) {
+                //$('#cooking').text("焼く");
+                $("#menu").text("『え、、もう掃除･洗濯終わったの？それって世界救ったに等しいじゃん。』");
+                setTimeout(function () {
+                    window.location.href = 'https://cookpad.com/search/%E7%84%BC%E3%81%8F%E3%80%80%E9%AD%9A%E3%80%80?order=';
+                }, 5000);
+            }
+            else if (randomnumber === 1) {
+                //$('#cooking').text("煮る");
+                $("#menu").text("『毎日こんなおいしいモノ出されちゃ、白旗何本あっても足りないわ。』");
+                setTimeout(function () {
+                    window.location.href = 'https://cookpad.com/search/%E7%85%AE%E3%82%8B%E3%80%80%E9%AD%9A%E3%80%80?order=';
+                }, 5000);
+            }
+            else if (randomnumber === 2) {
+                //$('#cooking').text("蒸す");
+                $("#menu").text("『あれ？なんかまた可愛くなってるよね？』");
+                setTimeout(function () {
+                    window.location.href = 'https://cookpad.com/search/%E8%92%B8%E3%81%99%E3%80%80%E9%AD%9A%E3%80%80?order=';
+                }, 5000);
+            }
+        });
+
+        $("#eat_out_btn").on("click", function () {
+            const min = 0
+            const max = 2
+            const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
+            if (randomnumber === 0) {
+                //$('#cooking').text("和食");
+                $("#menu").text("『いつもありがとう。』");
+                setTimeout(function () {
+                    window.location.href = 'https://tabelog.com/yamaguchi/C35202/rstLst/lunch/washoku/';
+                }, 5000);
+            }
+            else if (randomnumber === 1) {
+                //$('#cooking').text("洋食");
+                $("#menu").text("『掃除に洗濯？俺がやっとくよ。』");
+                setTimeout(function () {
+                    window.location.href = 'https://tabelog.com/yamaguchi/C35202/rstLst/yoshoku/';
+                }, 5000);
+            }
+            else if (randomnumber === 2) {
+                //$('#cooking').text("中華");
+                $("#menu").text("『良いから子供は早く寝なさい。今すぐだ！！』");
+                setTimeout(function () {
+                    window.location.href = 'https://tabelog.com/chinese/yamaguchi/A3504/rank/';
+                }, 5000);
+            }
+        });
+
+
+        //アコーディオンをクリックした時の動作
+        $('.person_message_box h6').on('click', function () {//タイトル要素をクリックしたら
+            var findElm = $(this).next(".person_message_item");//直後のアコーディオンを行うエリアを取得し
+            $(findElm).slideToggle();//アコーディオンの上下動作
+
+            if ($(this).hasClass('close')) {//タイトル要素にクラス名closeがあれば
+                $(this).removeClass('close');//クラス名を除去し
+            } else {//それ以外は
+                $(this).addClass('close');//クラス名closeを付与
+            }
+        });
+
+
+        //今週何回その献立だったかも出す。
+    </script>
+
+</body>
+
+</html>

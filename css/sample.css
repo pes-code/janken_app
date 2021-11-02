@@ -1,3 +1,4 @@
+
 html{
     background-image: url(../img/black_board4.jpg);
     background-size: cover;
@@ -5,7 +6,6 @@ html{
 body{
     margin:0;
     padding:0;
-    text-align:left;
     font-size: 32px;
 
 }
@@ -34,21 +34,32 @@ p{
     height:100px;
 }
 
-.person_message_box h6{
+.person_message_button{
     display: flex;
     justify-content: center;
 }
 
+.person_message_item{
+    display: flex;
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+}
+
 .person_message_text{
     font-size: 8px;
-    display: flex;
-    justify-content: center;
+}
+
+.person_message_text p{
+   margin-top: 10px;
+
 }
 
 .person_message_btn{
     display: flex;
     justify-content: center;
 }
+
 
 .btn_item{
     display: flex;

@@ -1,0 +1,88 @@
+@charset "uft-8" ;
+@media (max-width: 670px){
+    html{
+        display: flex;
+        justify-content: center;
+        background-size: cover;
+    }
+    body{
+        font-size: 20px;
+    }
+
+    .meat_item input{
+        height: 60px;
+        width: 50px;
+    }
+
+    .fish_item input{
+        height: 60px;
+        width: 50px;
+        margin: 0 50px 0 50px;
+    }
+
+    .eat_out_item input{
+        height: 60px;
+        width: 50px;
+    }
+
+    .btn_item{
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn_item h4{
+        font-size: 10px;
+    }
+
+    .message{
+      font-size: 18px;
+      text-align: center;
+      margin: 15px 0 0 0;
+    }
+
+    p{
+      font-size: 4px;  
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 70px;
+    }
+
+    input{
+        margin-bottom: 10px;
+    }
+
+    .person_message_box{
+        margin-top: 80px;
+    }
+
+    .person_message_text{
+    padding: auto;
+    margin: auto;
+}
+    .person_message_btn{
+        padding: 0px;
+        display: flex;
+        flex-direction: column;  
+    }
+
+    .person_message_btn input{
+        width: 20%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .textbox{
+        display: flex;
+        justify-content: center;
+    }
+    .textbox_btn{
+        display: flex;
+        justify-content: center;
+    }
+
+    .textbox input{
+        width: 80%;
+        height: 100px;
+    }
+}

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/sample.css">
+    <link rel="stylesheet" href="css/responsive.css">
     <title>昼下がりの戯れ</title>
 </head>
 
@@ -34,7 +35,6 @@
                 <h4>eat out</h4>
             </div>
         </div>
-        <!--<div id="cooking">let's cooking♪♪</div>-->
         <div class="message" id="menu">
             <h3>Message・・・</h3>
             <!---↓入力したテキストが出力される-->
@@ -50,19 +50,25 @@
         </p>
         <!----------------------------------------->
         <div class="person_message_box">
-            <h6>旦那さん（彼氏）は［ココ］をクリック！！</h6>
-            <div class="person_message_item">
+            <div class="person_message_button">
+                <input type="button" id="btn_1" value="旦那さんはクリック！！">
+            </div>
+            <div class="person_message_item" id="item_1">
                 <div class="person_message_text">
-                    <p>⇓⇓奥さん（彼女）に感謝のコトバを入力して［input］をクリック！⇓⇓</p>
+                    <p>⇓⇓奥さんに感謝のコトバを入力して［input］をクリック！⇓⇓</p>
                 </div>
                 <div class="person_message_btn">
-                    <input name="mydata_in" id="mydata_in" type="text" value="" />
-                    <input type="button" value="input" onclick="save();" />
+                    <div class="textbox">
+                        <input name="mydata_in" id="mydata_in" type="textarea" value="" />
+                    </div>
+                    <div class="textbox_btn">
+                        <input type="button" value="input" onclick="save();" />
+                        <input type="button" value="output" onclick="load();" />
+                    </div>
                 </div>
-                <input type="button" value="output" onclick="load();" />
+
             </div>
         </div>
-
 
         <!----------------------------------------->
     </main>
@@ -457,15 +463,10 @@
 
 
         //アコーディオンをクリックした時の動作
-        $('.person_message_box h6').on('click', function () {//タイトル要素をクリックしたら
-            var findElm = $(this).next(".person_message_item");//直後のアコーディオンを行うエリアを取得し
-            $(findElm).slideToggle();//アコーディオンの上下動作
-
-            if ($(this).hasClass('close')) {//タイトル要素にクラス名closeがあれば
-                $(this).removeClass('close');//クラス名を除去し
-            } else {//それ以外は
-                $(this).addClass('close');//クラス名closeを付与
-            }
+        $(function () {
+            $("#btn_1").click(function () {
+                $("#item_1").slideToggle(1000);
+            });
         });
 
 

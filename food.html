@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/sample.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <title>昼下がりの戯れ</title>
+    <title>気持ちよく夕飯を作ってもらうアプリ</title>
 </head>
 
 <body>
@@ -85,26 +85,25 @@
                 const max = 2
                 const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
                 if (randomnumber === 0) {
-                    //$('#cooking').text("焼く");
                     $("#menu").text("『手料理を、、、！？私のような甲斐性なしにですか？』");
                     setTimeout(function () {
                         window.location.href = 'https://cookpad.com/search/%E7%84%BC%E3%81%8F%E3%80%80%E8%82%89%E3%80%80?order=';
                     }, 5000);
-                    //指定したサイトへジャンプする
+                    //調理法「焼き」の献立レシピ一覧のサイトへジャンプする
                 }
                 else if (randomnumber === 1) {
-                    //$('#cooking').text("煮る");
                     $("#menu").text("『煮るなり焼くなり好きにしてくだいさい。』");
                     setTimeout(function () {
                         window.location.href = 'https://cookpad.com/search/%E8%B1%9A%E8%82%89%20%E7%85%AE%E3%82%8B';
                     }, 5000);
+                    //調理法「煮込み」の献立レシピ一覧のサイトへジャンプする
                 }
                 else if (randomnumber === 2) {
-                    //$('#cooking').text("蒸す");
                     $("#menu").text("『今日も一日、私のようなお荷物を抱えてお疲れ様でした。』");
                     setTimeout(function () {
                         window.location.href = 'https://cookpad.com/search/%E8%92%B8%E3%81%99%E3%80%80%E8%82%89%E3%80%80?order=';
                     }, 5000);
+                    //調理法「蒸し」の献立レシピ一覧のサイトへジャンプする
                 }
             });
 
@@ -113,21 +112,18 @@
                 const max = 2
                 const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
                 if (randomnumber === 0) {
-                    //$('#cooking').text("焼く");
                     $("#menu").text("『子供達よ、まず手を洗え！せっかくの手料理が汚れるだろ。』");
                     setTimeout(function () {
                         window.location.href = 'https://cookpad.com/search/%E7%84%BC%E3%81%8F%E3%80%80%E9%AD%9A%E3%80%80?order=';
                     }, 5000);
                 }
                 else if (randomnumber === 1) {
-                    //$('#cooking').text("煮る");
                     $("#menu").text("『ありがとうごぜーます。ありがとうごぜーます。ありがとうごぜーます。』");
                     setTimeout(function () {
                         window.location.href = 'https://cookpad.com/search/%E7%85%AE%E3%82%8B%E3%80%80%E9%AD%9A%E3%80%80?order=';
                     }, 5000);
                 }
                 else if (randomnumber === 2) {
-                    //$('#cooking').text("蒸す");
                     $("#menu").text("『冠たる幸福、、、私もしかして明日死ぬ？』");
                     setTimeout(function () {
                         window.location.href = 'https://cookpad.com/search/%E8%92%B8%E3%81%99%E3%80%80%E9%AD%9A%E3%80%80?order=';
@@ -140,26 +136,23 @@
                 const max = 2
                 const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
                 if (randomnumber === 0) {
-                    //$('#cooking').text("和食");
                     $("#menu").text("『申し訳ありません。もう少しであなた様のお手を煩わすところでした。』");
                     setTimeout(function () {
                         window.location.href = 'https://tabelog.com/yamaguchi/C35202/rstLst/lunch/washoku/';
                     }, 5000);
-                }
+                }//和食の飲食店一覧サイトへジャンプ
                 else if (randomnumber === 1) {
-                    //$('#cooking').text("洋食");
                     $("#menu").text("『おもてにお車をまわしております。』");
                     setTimeout(function () {
                         window.location.href = 'https://tabelog.com/yamaguchi/C35202/rstLst/yoshoku/';
                     }, 5000);
-                }
+                }//洋食の飲食店一覧サイトへジャンプ
                 else if (randomnumber === 2) {
-                    //$('#cooking').text("中華");
                     $("#menu").text("『迷われることはありません。私の給料など湯水のようにお使い下さい。』");
                     setTimeout(function () {
                         window.location.href = 'https://tabelog.com/chinese/yamaguchi/A3504/rank/';
                     }, 5000);
-                }
+                }//中華の飲食店一覧サイトへジャンプ
             });
         }
 
@@ -173,22 +166,23 @@
                 const max = 2
                 const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
                 if (randomnumber === 0) {
-                    //$('#cooking').text("焼く");
+                    //レシピ一覧ではなく、特定の献立レシピを表示
+                    //焼く
                     $("#menu").text("『だからソレはやめろって言ってるだろ！？おかわりし過ぎちゃうだろ！！』");
                     setTimeout(function () {
                         window.location.href = 'https://cookpad.com/recipe/6939830';
                     }, 5000);
-                    //指定したサイトへジャンプする
+
                 }
                 else if (randomnumber === 1) {
-                    //$('#cooking').text("煮る");
+                    //煮る
                     $("#menu").text("『なんだ、石原さとみかと思えばお前じゃん。』");
                     setTimeout(function () {
                         window.location.href = 'https://cookpad.com/recipe/6988034';
                     }, 5000);
                 }
                 else if (randomnumber === 2) {
-                    //$('#cooking').text("蒸す");
+                    //蒸す
                     $("#menu").text("『おかわり。。。頼んでるんじゃなくて命令な。』");
                     setTimeout(function () {
                         window.location.href = 'https://cookpad.com/recipe/6983974';
@@ -201,21 +195,21 @@
                 const max = 2
                 const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
                 if (randomnumber === 0) {
-                    //$('#cooking').text("焼く");
+                    //焼く
                     $("#menu").text("『まったく、お前の功績は銅像が建つレベルだな。』");
                     setTimeout(function () {
                         window.location.href = 'https://cookpad.com/recipe/6993002';
                     }, 5000);
                 }
                 else if (randomnumber === 1) {
-                    //$('#cooking').text("煮る");
+                    //煮る
                     $("#menu").text("『やばっ、、さとみが霞んで見える。』");
                     setTimeout(function () {
                         window.location.href = 'https://cookpad.com/recipe/6992120';
                     }, 5000);
                 }
                 else if (randomnumber === 2) {
-                    //$('#cooking').text("蒸す");
+                    //蒸す
                     $("#menu").text("『お前の手料理って飲食業界を脅かすよな。』");
                     setTimeout(function () {
                         window.location.href = 'https://cookpad.com/recipe/6979275';
@@ -228,21 +222,21 @@
                 const max = 2
                 const randomnumber = Math.floor(Math.random() * (max - min + 1)) + min;
                 if (randomnumber === 0) {
-                    //$('#cooking').text("和食");
+                    //和食
                     $("#menu").text("『お前の手料理に比べればどれも愚食だな、、、。』");
                     setTimeout(function () {
                         window.location.href = 'https://tabelog.com/yamaguchi/A3504/A350401/35010169/';
                     }, 5000);
                 }
                 else if (randomnumber === 1) {
-                    //$('#cooking').text("洋食");
+                    //洋食
                     $("#menu").text("『え？今日お前の手料理じゃないの？世紀末だな、、、』");
                     setTimeout(function () {
                         window.location.href = 'https://tabelog.com/yamaguchi/A3504/A350401/35002015/';
                     }, 5000);
                 }
                 else if (randomnumber === 2) {
-                    //$('#cooking').text("中華");
+                    //中華
                     $("#menu").text("『金の糸目をつける必要などない。俺が稼いでくるまでのこと。』");
                     setTimeout(function () {
                         window.location.href = 'https://tabelog.com/yamaguchi/A3504/A350401/35007756/';
@@ -338,7 +332,7 @@
             });
         }
 
-        //////////////////////夫婦モード
+        //////////////////////personモード
         //    localStorage.setItem('key', 'value')
         //    const value = localStorage.getItem('key')
         //    console.log(value)
@@ -471,6 +465,7 @@
 
 
         //今週何回その献立だったかも出す。
+
     </script>
 
 </body>
